@@ -1,0 +1,271 @@
+*{
+  padding:0;
+  margin:0;
+  font-family: "Oxanium", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-color: rgb(8, 8, 8);
+  transition: background-color 5s ease;
+  color:rgb(56, 5, 116)
+}
+
+/* Generar desenfoque */
+.contain{
+  backdrop-filter: blur(40px);
+  transition: all 0.2s ease-in-out;
+}
+.contain:hover{
+  backdrop-filter: blur(10px);
+}
+
+
+.circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: white;
+  z-index: -999;
+  transform: scale(5);
+}
+
+
+/* Le da efecto de atenuación a los textos */
+.texto-atenuado {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+  color: white;
+  animation-name: atenuacion;
+  animation-duration: 1s;
+  animation-direction: alternate;
+}
+/* Cuando el texto tiene la clase .active, su opacidad es 1 */
+@keyframes atenuacion {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Efecto para que la imagen se mueva */
+.efect-move {
+  transition: transform 1s ease; /* Transición suave para la posición */
+  transform: translateX(0px); /* Posición inicial */
+}
+.efect-move-active{
+  transform: translateX(-0%);
+  animation-name: move-image;
+  animation-duration: 1s;
+}
+@keyframes move-image {
+  0% {
+    transform: translateX(0%);
+  }
+  50%{
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+/* Atenuar secciones */
+.atenuacion {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Transición suave para la opacidad */
+  color: white;
+  animation-name: atenuacion;
+  animation-duration: 2s;
+  animation-direction: alternate;
+}
+/* Animar la sección */
+@keyframes atenuacion {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Efecto cuando dan click en una tecnologia */
+.atenuado-icono{
+  transform: scale(1);
+  animation-duration: 0.4s;
+  animation-name: scale-icono;
+}
+@keyframes scale-icono {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Clase para crear el modal */
+.modal {
+  display: none;
+  transform: scale(1);  
+  transition: scale 1s ease; /* Transición suave */
+  animation-name:close-modal;
+  animation-duration: 0.2s;
+}
+@keyframes close-modal {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.modal-activo{
+  position: fixed;
+  display: block;
+  z-index: 999; /* Hacer que el modal sea visible sobre el contenido */
+  transform: scale(1);
+  animation-name: modal;
+  animation-duration: 0.2s;
+}
+@keyframes modal {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Atenuar el texto del titulo  */
+.atenuacion-titulo{
+  opacity: 0;
+  color: white;
+  animation-name: aten;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes aten {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.forma_reloj{
+  clip-path: polygon(100% 0, 0 0, 100% 100%, 0% 100%);
+}
+/* Movimiento de la imagen del gato */
+.movimiento{
+  animation-name: move-image;
+  animation-duration: 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes move-image {
+  0% {
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+/* Movimiento de toda la pagina cuando el gato salte */
+.vibracion{
+  animation-name: vibra;
+  animation-duration: 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  transform: translateX(0);
+}
+@keyframes vibra {
+  0% {
+    transform: translateX(0%);
+  }
+  10%{
+    transform: translateX(0%);
+  }
+  20%{
+    transform: translateX(0%);
+  }
+  30%{
+    transform: translateX(0%);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  50%{
+    transform: translateX(-1%);
+  }
+  60%{
+    transform: translateX(1%);
+  }
+  70%{
+    transform: translateX(-1%);
+  }
+  80%{
+    transform: translateX(1%);
+  }
+  90%{
+    transform: translateX(-1%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+/* Vibracion vertical */
+.vibracion2{
+  animation-name: vibra2;
+  animation-duration: 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes vibra2 {
+  0% {
+    transform: translateY(0%);
+  }
+  10%{
+    transform: translateY(0%);
+  }
+  20%{
+    transform: translateY(0%);
+  }
+  30%{
+    transform: translateY(0%);
+  }
+  40%{
+    transform: translateY(0.5%);
+  }
+  50%{
+    transform: translateY(-0.5%);
+  }
+  60%{
+    transform: translateY(0.5%);
+  }
+  70%{
+    transform: translateY(-0.5%);
+  }
+  80%{
+    transform: translateY(0.5%);
+  }
+  90%{
+    transform: translateY(-0.5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+
+
